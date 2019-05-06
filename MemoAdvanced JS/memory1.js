@@ -1,24 +1,121 @@
-var cards = ["1.png", "1.png", "2.png", "2.png", "3.png", "3.png"];
 
 var oneVisible = false;
-var turnCounter = 0;
-var visible_nr;
 var lock = false;
-var pairsLeft = 3;
+var nextLevel;
+var cards;
+var pairsLeft;
+var visible_nr;
+var c0;
+var c1;
+var c2;
+var c3;
+var c4;
+var c5;
+var c6;
+var c7;
+var c8;
+var c9;
+var c10;
+var c11;
+var c12;
+var c13;
+var c14;
+var c15;
+var c16;
+var c17;
 
-var c0 = document.getElementById('c0');
-var c1 = document.getElementById('c1');
-var c2 = document.getElementById('c2');
-var c3 = document.getElementById('c3');
-var c4 = document.getElementById('c4');
-var c5 = document.getElementById('c5');
+function initLevel1() {
+	cards = ["1.png", "1.png", "2.png", "2.png", "3.png", "3.png"];
+	fisherYates();
+	pairsLeft = 3;
+	nextLevel = "index2.html";
+	c0 = document.getElementById('c0');
+	c1 = document.getElementById('c1');
+	c2 = document.getElementById('c2');
+	c3 = document.getElementById('c3');
+	c4 = document.getElementById('c4');
+	c5 = document.getElementById('c5');
+	c0.addEventListener("click", function(){ revealCard(0); });
+	c1.addEventListener("click", function(){ revealCard(1); });
+	c2.addEventListener("click", function(){ revealCard(2); });
+	c3.addEventListener("click", function(){ revealCard(3); });
+	c4.addEventListener("click", function(){ revealCard(4); });
+	c5.addEventListener("click", function(){ revealCard(5); });
+}
 
-c0.addEventListener("click", function(){ revealCard(0); });
-c1.addEventListener("click", function(){ revealCard(1); });
-c2.addEventListener("click", function(){ revealCard(2); });
-c3.addEventListener("click", function(){ revealCard(3); });
-c4.addEventListener("click", function(){ revealCard(4); });
-c5.addEventListener("click", function(){ revealCard(5); });
+function initLevel2() {
+	cards = ["one.png", "two.png", "four.png", "one.png", "five.png", "two.png", "six.png", "six.png", "four.png", "three.png", "five.png", "three.png"];
+	fisherYates();
+	pairsLeft = 6;
+	nextLevel = "index3.html";
+	c0 = document.getElementById('c0');
+	c1 = document.getElementById('c1');
+	c2 = document.getElementById('c2');
+	c3 = document.getElementById('c3');
+	c4 = document.getElementById('c4');
+	c5 = document.getElementById('c5');
+	c6 = document.getElementById('c6');
+	c7 = document.getElementById('c7');
+	c8 = document.getElementById('c8');
+	c9 = document.getElementById('c9');
+	c10 = document.getElementById('c10');
+	c11 = document.getElementById('c11');
+	c0.addEventListener("click", function(){ revealCard(0); });
+	c1.addEventListener("click", function(){ revealCard(1); });
+	c2.addEventListener("click", function(){ revealCard(2); });
+	c3.addEventListener("click", function(){ revealCard(3); });
+	c4.addEventListener("click", function(){ revealCard(4); });
+	c5.addEventListener("click", function(){ revealCard(5); });
+	c6.addEventListener("click", function(){ revealCard(6); });
+	c7.addEventListener("click", function(){ revealCard(7); });
+	c8.addEventListener("click", function(){ revealCard(8); });
+	c9.addEventListener("click", function(){ revealCard(9); });
+	c10.addEventListener("click", function(){ revealCard(10); });
+	c11.addEventListener("click", function(){ revealCard(11); });
+}
+
+function initLevel3() {
+	cards = ["a.png", "a.png", "b.png", "b.png", "c.png", "c.png", "d.png", "d.png", "f.png", "f.png", "aa.png", "aa.png", "bb.png", "bb.png", "cc.png", "cc.png", "dd.png", "dd.png"];
+	fisherYates();
+	pairsLeft = 9;
+	nextLevel = "end.html";
+	c0 = document.getElementById('c0');
+	c1 = document.getElementById('c1');
+	c2 = document.getElementById('c2');
+	c3 = document.getElementById('c3');
+	c4 = document.getElementById('c4');
+	c5 = document.getElementById('c5');
+	c6 = document.getElementById('c6');
+	c7 = document.getElementById('c7');
+	c8 = document.getElementById('c8');
+	c9 = document.getElementById('c9');
+	c10 = document.getElementById('c10');
+	c11 = document.getElementById('c11');
+	c12 = document.getElementById('c12');
+	c13 = document.getElementById('c13');
+	c14 = document.getElementById('c14');
+	c15 = document.getElementById('c15');
+	c16 = document.getElementById('c16');
+	c17 = document.getElementById('c17');
+	c0.addEventListener("click", function(){ revealCard(0); });
+	c1.addEventListener("click", function(){ revealCard(1); });
+	c2.addEventListener("click", function(){ revealCard(2); });
+	c3.addEventListener("click", function(){ revealCard(3); });
+	c4.addEventListener("click", function(){ revealCard(4); });
+	c5.addEventListener("click", function(){ revealCard(5); });
+	c6.addEventListener("click", function(){ revealCard(6); });
+	c7.addEventListener("click", function(){ revealCard(7); });
+	c8.addEventListener("click", function(){ revealCard(8); });
+	c9.addEventListener("click", function(){ revealCard(9); });
+	c10.addEventListener("click", function(){ revealCard(10); });
+	c11.addEventListener("click", function(){ revealCard(11); });
+	c12.addEventListener("click", function(){ revealCard(12); });
+	c13.addEventListener("click", function(){ revealCard(13); });
+	c14.addEventListener("click", function(){ revealCard(14); });
+	c15.addEventListener("click", function(){ revealCard(15); });
+	c16.addEventListener("click", function(){ revealCard(16); });
+	c17.addEventListener("click", function(){ revealCard(17); });
+}
 
 function revealCard(nr)
 {
