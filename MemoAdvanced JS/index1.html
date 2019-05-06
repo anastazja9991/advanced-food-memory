@@ -3,17 +3,21 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>MEMORY</title>
-	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="style1.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 </head>
-<body onload="fisherYates()">
-	<header>
-		<h1>Memory</h1>
-		<h2>POZIOM 1</h2>
-	</header>
-	<main>
-		<article>
+<body onload="initLevel1()">
+<div id="container">
+	<div id="header">
+		<h1>MEMORY</h1>
+		<h2>poziom 1</h2>
+	</div>
+		<div style="text-align: center">
+			<a href="index2.html" id="win"></a>
+		</div>
+<div id="article">
 			<div class="board">
 				<div class="card" id="c0"></div>
 				<div class="card" id="c1"></div>
@@ -22,9 +26,8 @@
 				<div class="card" id="c4"></div>
 				<div class="card" id="c5"></div>
 			</div>
-				<div class="score">ruchy: 0</div>
-		</article>
-	</main>
+</div>
+</div>
 	<script src="jquery-3.3.1.min.js"></script>
 	<script src="memory1.js"></script>
 </body>
